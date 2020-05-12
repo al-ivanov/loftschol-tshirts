@@ -14,6 +14,8 @@
 
 }
 
+
+
 * {
     box-sizing: border-box;
 }
@@ -52,6 +54,26 @@ body {
     padding: 27px 27px 0 100px;
 }
 
+.products__header {
+    height: 180px;
+    background: url('../img/bg/hero.jpg') center center / cover no-repeat;
+    padding-top: 0;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 90px;
+}
+
+.products__header:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -17%;
+    left: 17%;
+    width: 65%;
+    height: 172%;
+    background: url('../img/decor/header-guys.png') center center /contain no-repeat;
+}
+
 .mail {
     text-decoration: none;
     text-align: center;
@@ -71,11 +93,11 @@ body {
 
 .hero__content {
     position: absolute;
-    top: 50%;
+    top: 57%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 1140px;
-    height: 72%;
+    height: 70%;
 }
 
 .sidebar {
@@ -95,12 +117,14 @@ body {
 .sidebar__menu {
     position: absolute;
     left: -400px;
+    transition: left 0.3s;
 }
 
 .sidebar--opened .sidebar__menu {
     left: 0;
     width: 100%;
     text-align: center;
+    transition-delay: 0.1s;
 }
 
 .sidebar--opened {
@@ -177,18 +201,67 @@ body {
 .fade-slider {
     width: 100%;
     height: 100%;
+    position: relative;
 }
 
 .fade-slider__item {
-    background: url('../img/content/hero/slider_pic_1.png') center center / contain no-repeat;
     height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity .5s;
+}
+
+.fade-slider__text--header {
+    top: 19%;
+    left: 28%;
+}
+
+.fade-slider__item--visible {
+    opacity: 1;
+}
+
+.fade-slider__item--style-thirts {
+    background: url('../img/content/hero/slider_pic_1.png') center center / contain no-repeat;
+}
+
+.fade-slider__item--style-games {
+    background: url('../img/content/hero/slider_pic_2.png') center center / contain no-repeat;
+}
+
+.fade-slider__item--style-presents {
+    background: url('../img/content/hero/slider_pic_3.png') center center / contain no-repeat;
 }
 
 .fade-slider__text {
     position: absolute;
+}
+
+.fade-slider__item--style-thirts .fade-slider__text {
     left: 50%;
     top: 50%;
-    transform: translate(-134%, -52%);
+    transform: translate(-130%, -52%);
+}
+
+.fade-slider__item--style-games .fade-slider__text {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, 75%);
+}
+
+.fade-slider__item--style-presents .fade-slider__text {
+    left: 50%;
+    top: 50%;
+    transform: translate(-100%, 45%);
+}
+
+.fade-slider__item--style-games .lined-text,
+.fade-slider__item--style-presents .lined-text
+{
+    align-items: center;
 }
 
 .lined-text {
@@ -202,14 +275,19 @@ body {
     align-items: flex-start;
 }
 
+.lined-text--reduced {
+    font-size: 24px;
+}
+
 .lined-text__word {
     background: #000;
     padding: 0 17px 8px;
     margin-top: -7px;
+    white-space: nowrap;
 }
 
 .lined-text__word-yellow {
-    color: var(var(--yellow));
+    color: var(--yellow);
 }
 
 .lined-text__word:nth-child(2n) {
@@ -218,7 +296,7 @@ body {
 
 .container {
     margin: 0 auto;
-    width: 1300px; 
+    width: 1310px; 
 }
 
 ul {
@@ -582,3 +660,338 @@ ul > li {
     height: 100%;
     transition: fill 0.3s;
 }
+
+.container__products {
+    margin-bottom: 95px;
+}
+
+.tsherts-choice {
+    width: 1102px;
+    margin: 0 auto;
+    padding: 10px;
+    background-color: #ffc92f;
+    display: flex;
+}
+
+.tshirt__desc {
+    background: #fcf5e6;
+    width: 100%;
+}
+
+.tshirt__desc > div {
+    padding-left: 30px;
+}
+
+.tsherts-options__info {
+    padding-top: 30px;
+    margin-bottom: 30px;
+}
+
+.tsherts-opcions__brand {
+    font-size: 17px;
+    font-weight: bold;
+    color: #ffc92f;
+}
+
+.tsherts-opcions__name,
+.tsherts-opcions__price--amound
+{
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-size: 47px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.tsherts-opcions__price {
+    background-color: #ffc92f;
+    padding: 6px 17px;
+    display: inline-block;
+    line-height: 1;
+}
+
+.tsherts-opcions__price--amound {
+    font-size: 37px;
+    text-align: center;
+}
+
+.tsherts-opcions__about {
+    padding: 30px 0;
+    border-top: 1px solid #ded8c8;
+    border-bottom: 1px solid #ded8c8;
+    margin-bottom: 28px;
+}
+
+.tsherts-opcions__item {
+    font-size: 12px;
+    padding: 5px 25px;
+}
+
+.tsherts-choice__size-list {
+    margin-bottom: 28px;
+}
+
+.tsherts-choice__size {
+    display: flex;
+}
+
+.size__btn {
+    width: 50px;
+    height: 50px;
+    margin-left: 7px;
+}
+
+.size__btn:first-child {
+    margin-left: 0;
+}
+
+.size__btn input,
+.color__btn input
+{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+.size__btn input:checked + label {
+    background-color: #ffc92f;
+    border-color:  #ffc92f;
+}
+
+.size__btn input:disabled + label {
+    color: #cac3b3;
+    cursor: default;
+}
+
+.size__btn-radio {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: 2px solid #e4ddcc;
+    text-transform: uppercase;
+}
+
+.tsherts-choice__color {
+    margin-bottom: 35px;
+}
+
+.tshirt-choice__color__list {
+    display: flex;
+}
+
+.color__btn {
+    margin-left: 20px;
+}
+
+.color__btn input:checked + label:before{
+    content: "";
+    position: absolute;
+    top: -5px;
+    bottom: -5px;
+    left: -5px;
+    right: -5px;
+    border-radius: 50%;
+    border: 3px solid #ffcf48;
+}
+
+.color__btn:first-child {
+    margin-left: 0;
+}
+
+.color__btn-radio {
+    display: block;
+    width: 23px;
+    height: 23px;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+}
+
+.color__btn-radio--black {
+    background-color: #2f2c25;
+}
+
+.color__btn-radio--white {
+    background-color: #fcf5e6;
+    border: 1px solid #e0d9c8
+}
+
+.color__btn-radio--green {
+    background-color: #529029;
+}
+
+.color__btn-radio--blue {
+    background-color: #39498d;
+}
+
+.color__btn-radio--red {
+    background-color: #d82727;
+}
+
+.tsherts-choice__btn {
+    margin-left: 30px;
+    margin-bottom: 30px;
+    cursor: pointer;
+    padding: 13px 68px;
+    font-size: 28px;
+    line-height: 1;
+    letter-spacing: 2px;
+}
+
+
+.container__info {
+    max-width: 1100px;
+}
+
+.info {
+    margin-bottom: 85px;
+}
+
+.tabs {
+    border: 10px solid var(--yellow);
+}
+
+
+.tab__item {
+    display: none;
+    width: 100%;
+    margin: 0 auto;
+    transform: scale(0, 0);
+}
+
+.tab__item--active {
+    transform: scale(1, 1);
+    transition: transform 0.3s;
+    transition-delay: 0.1s;
+    display: block;
+}
+
+.description__wrapper {
+    display: flex;
+}
+
+.description__list {
+    width: 51%;
+    padding: 46px 0px 40px 35px;
+    border-right: 1px solid #ddd7c7;
+}
+
+.description__item {
+    display: flex;
+    align-items: center;
+}
+
+.description__icon {
+    width: 25px;
+    height: 18px;
+    margin-right: 25px;
+}
+
+.description__text {
+    font-size: 13px;
+    display: block;
+}
+
+.descr__text {
+    font-size: 13px;
+    padding: 45px 90px 0 45px;
+    line-height: 1.42;
+}
+
+.tab__item__sizes {
+    display: flex;
+    width: 100%;
+}
+
+.tab__item__instruction {
+    padding: 40px 21px;
+}
+
+.instruction__list {
+    padding: 0 auto;
+    margin-top: 25px;
+}
+
+.instruction__item {
+    line-height: 2;
+    font-size: 12px;
+}
+
+.table-sizes {
+	font-size: 14px;
+	width: 70%;
+	border-collapse: collapse;
+}
+
+.table-sizes:last-child tbody tr:last-child td {
+	border-bottom: none;
+}
+
+.table-sizes thead {
+    vertical-align: middle;
+	background: #f6efe0;
+}
+
+.table-sizes thead th:first-child {
+	text-align: left;
+}
+
+.table-sizes thead th {
+	border-top: none;
+}
+
+.table-sizes th, 
+.table-sizes td {
+	border: 1px solid #e0d9c8;
+}
+
+.table-sizes th {
+	padding: 20px;
+}
+
+.table-sizes td {
+	padding: 17px;
+}
+
+.delivery__wrapper {
+    display: flex;
+}
+
+.delivery__content {
+    width: 53%;
+    min-height: 240px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid #ddd7c7;
+}
+
+.delivery__terms, 
+.about__text {
+    line-height: 1.42;
+    font-size: 14px;
+    padding: 65px 45px;
+}
+
+.about__wrapper {
+    display: flex;
+}
+
+.about__content {
+    padding: 88px 55px 0;
+    border-right: 1px solid #ddd7c7;
+}
+
+.about__img {
+    max-width: 100%;
+    max-width: 100%;
+}
+
+
+
